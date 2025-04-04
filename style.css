@@ -170,6 +170,10 @@ body.dark-mode .header {
     background-color: var(--dark-card-bg);
 }
 
+.navbar {
+    height: 100%;
+}
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
