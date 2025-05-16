@@ -912,3 +912,34 @@ body.dark-mode .footer-social a {
         /* Stack skills */
     }
 }
+
+.portfolio-item {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Portfolio Screenshots */
+.portfolio-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.portfolio-screenshot {
+    border-radius: 16px;
+    width: 160px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.portfolio-screenshot:hover {
+    transform: scale(1.04);
+}
