@@ -128,36 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- Scroll Progress Bar ---
-    const progressBar = document.querySelector('.scroll-progress');
-    if (progressBar) {
-        const updateProgress = () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-            progressBar.style.width = pct + '%';
-        };
-        window.addEventListener('scroll', updateProgress, { passive: true });
-        updateProgress();
-    }
-
-    // --- Cursor Glow ---
-    const cursorGlow = document.querySelector('.cursor-glow');
-    if (cursorGlow && window.matchMedia('(hover: hover)').matches) {
-        let raf = null;
-        let tx = 0, ty = 0;
-        window.addEventListener('mousemove', (e) => {
-            tx = e.clientX;
-            ty = e.clientY;
-            if (!raf) {
-                raf = requestAnimationFrame(() => {
-                    cursorGlow.style.transform = `translate(${tx}px, ${ty}px) translate(-50%, -50%)`;
-                    raf = null;
-                });
-            }
-        }, { passive: true });
-    }
-
     // --- Hero Phone Screenshot Cycling ---
     const shots = document.querySelectorAll('.phone-shot');
     if (shots.length > 1) {
